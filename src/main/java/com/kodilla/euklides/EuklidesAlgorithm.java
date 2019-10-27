@@ -1,6 +1,5 @@
 package com.kodilla.euklides;
 
-import java.util.*;
 public class EuklidesAlgorithm {
 
     public static final Integer subAlgorithm(int a, int b) {
