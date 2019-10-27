@@ -4,42 +4,41 @@ public class EuklidesAlgorithm {
 
     public static final Integer subAlgorithm(int a, int b) {
 
+        Integer result;
+
         if ( a == 0 && b == 0) {
-            return null;
-        }
-
-        if (a == 0 || b == 0) {
-            return a + b;
-        }
-
-        while (a != b) {
-            if (a > b) {
-                a -= b;
-            } else {
-                b -= a;
+            result = null;
+        } else if (a == 0 || b == 0) {
+            result = Integer.valueOf(a + b);
+        } else {
+            while (a != b) {
+                if (a > b) {
+                    a -= b;
+                } else {
+                    b -= a;
+                }
             }
+            result = Integer.valueOf(a);
         }
-
-        return a;
+        return result;
     }
 
     public static final Integer modAlgorithm(int a, int b) {
         int tmp;
+        Integer result;
 
         if ( a == 0 && b == 0) {
-            return null;
+            result = null;
+        } else if (a == 0 || b == 0) {
+            result = Integer.valueOf(a + b);
+        } else {
+            while (b != 0) {
+                tmp = a % b;
+                a = b;
+                b = tmp;
+            }
+            result = Integer.valueOf(a);
         }
-
-        if (a == 0 || b == 0) {
-            return a + b;
-        }
-
-        while (b != 0) {
-            tmp = a % b;
-            a = b;
-            b = tmp;
-        }
-
-        return a;
+        return result;
     }
 }
